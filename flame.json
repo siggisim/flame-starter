@@ -1,10 +1,7 @@
 {
   "deps": [
-    "tryflame/flame-node"
+    "tryflame/flame-typescript"
   ],
-  "init": {
-    "path": "flame/init"
-  },
   "create": {
     "path": "flame/create"
   }
