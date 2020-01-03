@@ -1,0 +1,11 @@
+{
+  "deps": [
+    "tryflame/flame-node"
+  ],
+  "init": {
+    "path": "flame/init"
+  },
+  "create": {
+    "path": "flame/create"
+  }
+}
