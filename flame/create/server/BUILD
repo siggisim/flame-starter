@@ -1,6 +1,7 @@
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 load("@io_bazel_rules_docker//nodejs:image.bzl", "nodejs_image")
 load("@k8s_deploy//:defaults.bzl", "k8s_deploy")
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -13,8 +14,8 @@ nodejs_binary(
         "VERSION",
     ],
     data = [
+        ":server_library",
         "//{{PATH}}/app:app_bundle.js",
-        "//{{PATH}}/server",
         "//{{PATH}}/static",
     ],
     entry_point = "//{{PATH}}/server:server.ts",
@@ -29,8 +30,8 @@ nodejs_image(
         "VERSION",
     ],
     data = [
+        ":server_library",
         "//{{PATH}}/app:app_bundle.js",
-        "//{{PATH}}/server",
         "//{{PATH}}/static",
     ],
     entry_point = "//{{PATH}}/server:server.ts",
@@ -43,4 +44,20 @@ k8s_deploy(
         "gcr.io/sunlit-hook-110823/siggisim:server_image": ":server_image",
     },
     template = ":deployment.yaml",
+)
+
+ts_library(
+    name = "server_library",
+    srcs = ["server.ts"],
+    data = [
+        "//:package.json",
+    ],
+    deps = [
+        "//{{PATH}}/handler",
+        "@npm//@types/express",
+        "@npm//@types/node",
+        "@npm//express",
+        "@npm//http",
+        "@npm//protobufjs",
+    ],
 )

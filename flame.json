@@ -1,7 +1,8 @@
 {
   "deps": [
     "tryflame/flame-typescript",
-    "tryflame/flame-docker"
+    "tryflame/flame-docker",
+    "tryflame/flame-kubernetes"
   ],
   "create": {
     "path": "flame/create"
