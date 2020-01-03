@@ -53,7 +53,7 @@ ts_library(
         "//:package.json",
     ],
     deps = [
-        "//{{PATH}}/handler",
+        "//{{PATH}}/server/handler",
         "@npm//@types/express",
         "@npm//@types/node",
         "@npm//express",

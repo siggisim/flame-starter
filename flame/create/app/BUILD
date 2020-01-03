@@ -19,6 +19,7 @@ ts_library(
     name = "app",
     srcs = glob(["*.tsx"]),
     deps = [
+        "//{{PATH}}/app/root",
         "@npm//@types/react",
         "@npm//@types/react-dom",
         "@npm//react",

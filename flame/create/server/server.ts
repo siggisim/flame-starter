@@ -1,7 +1,7 @@
 import express from 'express';
 import * as http from 'http';
 
-import handleApiRequest from 'handler/handle_api';
+import handleApiRequest from './handler/handle_api';
 
 const port = process.env.PORT || 80;
 
@@ -10,8 +10,8 @@ function handleServerLoaded() {
 }
 
 var app = express()
-  .use('/', express.static('static'))
-  .use('/app', express.static('app'))
+  .use('/', express.static('{{PATH}}/static'))
+  .use('/app', express.static('{{PATH}}/app'))
   .get('/api', handleApiRequest);
 
 var server = new http.Server(app)

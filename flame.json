@@ -5,6 +5,19 @@
     "tryflame/flame-kubernetes"
   ],
   "create": {
-    "path": "flame/create"
+    "path": "flame/create",
+    "npm": [
+      "@types/express",
+      "@types/moment",
+      "@types/react",
+      "@types/react-dom",
+      "@types/request",
+      "express",
+      "http",
+      "moment",
+      "react",
+      "react-dom",
+      "request"
+    ]
   }
 }
