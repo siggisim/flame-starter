@@ -41,7 +41,7 @@ nodejs_image(
 k8s_deploy(
     name = "deploy",
     images = {
-        "gcr.io/sunlit-hook-110823/siggisim:server_image": ":server_image",
+        "gcr.io/YOUR_REPO_NAME_HERE/{{NAME}}:server_image": ":server_image",
     },
     template = ":deployment.yaml",
 )

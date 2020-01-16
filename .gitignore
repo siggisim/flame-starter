@@ -1,0 +1,14 @@
+tulsi-workspace
+node_modules
+bazel-out
+dist
+yarn.lock
+yarn-error.log
+.theia
+server/credentials/credentials.ts
+key.json
+google-cloud-sdk
+google-cloud-sdk-251.0.0-linux-x86_64.tar.gz
+.DS_Store
+ios/tulsi.tulsiproj/*.tulsiconf-user
+swipeup
