@@ -15,10 +15,10 @@ nodejs_binary(
     ],
     data = [
         ":server_library",
-        "//{{PATH}}/app:app_bundle.js",
-        "//{{PATH}}/static",
+        "//app:app_bundle.js",
+        "//static",
     ],
-    entry_point = "//{{PATH}}/server:server.ts",
+    entry_point = "//server:server.ts",
 )
 
 nodejs_image(
@@ -31,10 +31,10 @@ nodejs_image(
     ],
     data = [
         ":server_library",
-        "//{{PATH}}/app:app_bundle.js",
-        "//{{PATH}}/static",
+        "//app:app_bundle.js",
+        "//static",
     ],
-    entry_point = "//{{PATH}}/server:server.ts",
+    entry_point = "//server:server.ts",
     node_modules = "@npm//:node_modules",
 )
 
@@ -53,7 +53,7 @@ ts_library(
         "//:package.json",
     ],
     deps = [
-        "//{{PATH}}/server/handler",
+        "//server/handler",
         "@npm//@types/express",
         "@npm//@types/node",
         "@npm//express",

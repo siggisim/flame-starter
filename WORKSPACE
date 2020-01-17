@@ -63,3 +63,27 @@ load(
 )
 
 nodejs_image_repositories()
+
+# Kubernetes
+
+git_repository(
+    name = "io_bazel_rules_k8s",
+    commit = "4f70f411ccfc7c228492d5f8872cc67b67cd7f10",
+    remote = "https://github.com/bazelbuild/rules_k8s.git",
+    shallow_since = "1556131309 -0400",
+)
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_defaults", "k8s_repositories")
+load("@io_bazel_rules_k8s//toolchains/kubectl:kubectl_configure.bzl", "kubectl_configure")
+
+kubectl_configure(
+    name = "k8s_config",
+    build_srcs = True,
+)
+
+k8s_repositories()
+
+k8s_defaults(
+    name = "k8s_deploy",
+    kind = "deployment",
+)
