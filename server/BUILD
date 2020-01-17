@@ -40,9 +40,9 @@ nodejs_image(
 
 k8s_deploy(
     name = "deploy",
-    cluster = "gke_sunlit-hook-110823_us-central1_flame-cluster",
+    cluster = "gke_flame-build_us-central1-a_flame-sandbox-central",
     images = {
-        "gcr.io/sunlit-hook-110823/{{NAME}}:server_image": ":server_image",
+        "gcr.io/flame-build/{{NAME}}:server_image": ":server_image",
     },
     template = ":deployment.yaml",
 )
