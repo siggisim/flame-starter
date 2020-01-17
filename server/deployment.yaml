@@ -46,7 +46,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hyperlink-ingress
+  name: {{NAME}}-ingress
   annotations:
     networking.gke.io/managed-certificates: ""
 spec:
