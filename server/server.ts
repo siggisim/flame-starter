@@ -6,7 +6,7 @@ import handleApiRequest from './handler/handle_api';
 const port = process.env.PORT || 80;
 
 function handleServerLoaded() {
-  console.log(`Server listening on port: ${port}`);
+  console.log(`Server is running at: http://localhost:${port}/`);
 }
 
 var app = express()
