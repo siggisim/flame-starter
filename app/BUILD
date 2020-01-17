@@ -1,17 +1,16 @@
 load("@npm_bazel_typescript//:index.bzl", "ts_devserver", "ts_library")
-load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle")
+load("@npm_bazel_rollup//:index.bzl", "rollup_bundle")
 
 package(default_visibility = ["//visibility:public"])
 
 rollup_bundle(
     name = "app_bundle",
-    enable_code_splitting = False,
-    entry_point = "app.ts",
-    globals = {
-        "protobufjs/minimal": "protobuf",
-    },
+    config_file = "rollup.config.js",
+    entry_point = "app.tsx",
     deps = [
         ":app",
+        "@npm//rollup-plugin-commonjs",
+        "@npm//rollup-plugin-node-resolve",
     ],
 )
 

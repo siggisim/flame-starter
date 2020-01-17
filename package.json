@@ -1,9 +1,10 @@
 {
   "devDependencies": {
-    "@bazel/bazel": "^0.27.0",
+    "@bazel/bazel": "^2.0.0",
     "@bazel/buildifier": "^0.22.0",
     "@bazel/ibazel": "^0.10.3",
-    "@bazel/typescript": "^0.32.1",
+    "@bazel/rollup": "^1.1.0",
+    "@bazel/typescript": "^1.1.0",
     "typescript": "^3.4.5"
   },
   "dependencies": {
@@ -22,6 +23,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.8"
+    "request-promise-native": "^1.0.8",
+    "rollup": "^1.29.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
