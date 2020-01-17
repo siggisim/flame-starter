@@ -3,7 +3,6 @@
     "jsx": "react",
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "importHelpers": true,
     "moduleResolution": "node",
     "module": "commonjs",
     "sourceMap": false,
@@ -17,7 +16,7 @@
       "dom.iterable"
     ],
     "paths": {
-      "siggisim/*": [
+      "{{PATH}}/*": [
         "*",
         "dist/bin/*"
       ],

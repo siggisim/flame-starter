@@ -10,8 +10,8 @@ function handleServerLoaded() {
 }
 
 var app = express()
-  .use('/', express.static('{{PATH}}/static'))
-  .use('/app', express.static('{{PATH}}/app'))
+  .use('/', express.static('static'))
+  .use('/app', express.static('app'))
   .get('/api', handleApiRequest);
 
 var server = new http.Server(app)

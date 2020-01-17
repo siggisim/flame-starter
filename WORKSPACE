@@ -1,5 +1,5 @@
 workspace(
-    name = "siggisim",
+    name = "{{NAME}}",
     managed_directories = {"@npm": ["node_modules"]},
 )
 
